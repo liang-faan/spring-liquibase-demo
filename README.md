@@ -93,3 +93,19 @@ by rollback to tag v2.2.3, those insert into item, house records will be rolled 
 ``` shell
 curl http://localhost:8080/rollbackLiquibase?tag=v2.2.3
 ```
+
+```java
+    @GetMapping("/rollbackLiquibase")
+    public String rollbackLiquibase(String tag){
+        try {
+            ResourceAccessor resourceAccessor = new SpringResourceAccessor(springLiquibase.getResourceLoader());
+            DatabaseConnection connection = new JdbcConnection(springLiquibase.getDataSource().getConnection());
+            Liquibase liquibase = new Liquibase(springLiquibase.getChangeLog(), resourceAccessor, connection);
+            liquibase.rollback(tag, springLiquibase.getContexts());
+            liquibase.close();
+        } catch (SQLException | LiquibaseException e) {
+            throw new RuntimeException(e);
+        }
+        return "Ok";
+    }
+```
