@@ -69,4 +69,5 @@ http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibas
     <changeSet id="tagdb_v2.2.4" author="dennyliang">
         <tagDatabase tag="v2.2.4"/>
     </changeSet>
+    <include file="classpath:/db/changelog/db.changelog-dev.xml"/>
 </databaseChangeLog>
