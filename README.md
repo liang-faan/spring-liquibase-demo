@@ -5,7 +5,7 @@
 [Using Liquibase with Spring Boot](https://contribute.liquibase.com/extensions-integrations/directory/integration-docs/springboot/springboot/)
 ![](./images/springboot-liquibase-integrates.png)
 - **Keep people away from data.** is becoming more and more important in our ecosystem. It is one of principle to keep our environment secure and stabled.
-- In industry, sometime we may need **rollback** application if any issue detected in production. In the meanwhle we also need to rollback our **application data path** made by the particular version.
+- In industry, sometime we may need **rollback** application if any issue detected in production. In the meanwhle we also need to rollback our **application data patch** made by the particular version.
 - To manage **data patch rollback**, we have to make sure data consist with previously state after rollback. Liqiubase offers a very well data patching approach which allow us bundle the rollback scripts to each changeset.
 
 # Getting Started
