@@ -127,7 +127,7 @@ http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibas
 ### Implement Springboot API to rollback liquibase changes to particular tag
 by rollback to tag v2.2.3, those insert into item, house records will be rolled back.
 ``` shell
-curl http://localhost:8080/rollbackLiquibaseByTag?tag=v2.2.3
+curl -X GET "http://localhost:8080/rollbackLiquibaseByTag?tag=v2.2.3"
 ```
 
 ## Sample API which we trigger liquibase rollback via Springboot API

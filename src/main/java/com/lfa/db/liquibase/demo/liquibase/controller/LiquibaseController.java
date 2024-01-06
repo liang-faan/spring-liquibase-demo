@@ -1,5 +1,7 @@
 package com.lfa.db.liquibase.demo.liquibase.controller;
 
+import liquibase.Contexts;
+import liquibase.LabelExpression;
 import liquibase.Liquibase;
 import liquibase.database.DatabaseConnection;
 import liquibase.database.jvm.JdbcConnection;
@@ -26,7 +28,7 @@ public class LiquibaseController {
             ResourceAccessor resourceAccessor = new SpringResourceAccessor(springLiquibase.getResourceLoader());
             DatabaseConnection connection = new JdbcConnection(springLiquibase.getDataSource().getConnection());
             Liquibase liquibase = new Liquibase(springLiquibase.getChangeLog(), resourceAccessor, connection);
-            liquibase.rollback(tag, springLiquibase.getContexts());
+            liquibase.rollback(tag, null, new Contexts(springLiquibase.getContexts()), new LabelExpression());
             liquibase.close();
         } catch (SQLException | LiquibaseException e) {
             throw new RuntimeException(e);
