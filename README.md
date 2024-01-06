@@ -1,6 +1,6 @@
 # Demo Springboot rollback data patch with liquibase
 **Since Liquibase v4.25.1 has fixed the command scope problem. Update this project to use v4.25.1**
-**~~Note: this demo only works for liquibase v4.20.0 and below.~~** this is because from Liquibase v4.21.0 and above, Liquibase has refactored the rollback API with different commandScope.
+~~**Note: this demo only works for liquibase v4.20.0 and below.** this is because from Liquibase v4.21.0 and above, Liquibase has refactored the rollback API with different commandScope.~~
 ## Reason why I document this
 - According Liquibase official document, Liquibase provides limited functionalities for Springboot integrates
 [Using Liquibase with Spring Boot](https://contribute.liquibase.com/extensions-integrations/directory/integration-docs/springboot/springboot/)
